@@ -30,8 +30,8 @@ npm start
 
 ## Explore the source
 
-- [src/app](https://github.com/bobo-labs/redza-website/tree/main/src/app) — page, layout, and interface components
-- [public/images](https://github.com/bobo-labs/redza-website/tree/main/public/images) — brand assets and imagery
+- [src/app](https://github.com/barkz-xyz/redza-website/tree/main/src/app) — page, layout, and interface components
+- [public/images](https://github.com/barkz-xyz/redza-website/tree/main/public/images) — brand assets and imagery
 - [Brand system notes](public/images/redza%20branding/redesign-v2/README.md)
 
-Built by [barkz](https://github.com/bobo-labs).
+Built by [barkz](https://github.com/barkz-xyz).
