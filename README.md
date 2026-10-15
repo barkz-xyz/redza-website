@@ -34,4 +34,4 @@ npm start
 - [public/images](https://github.com/bobo-labs/redza-website/tree/main/public/images) — brand assets and imagery
 - [Brand system notes](public/images/redza%20branding/redesign-v2/README.md)
 
-Built by [Alejandro Mendoza / bobo labs](https://github.com/bobo-labs).
+Built by [barkz](https://github.com/bobo-labs).
