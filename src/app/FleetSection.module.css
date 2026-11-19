@@ -8,3 +8,5 @@
 .inventory td { font-family: var(--font-dm-mono), monospace; }
 .cold { margin-block-start: 2rem; padding-inline-start: 1rem; border-inline-start: 2px solid var(--red); }
 .cold p { max-inline-size: 51ch; margin-block: .5rem; line-height: 1.65; }
+.serviceLink { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.serviceLink:hover, .serviceLink:focus-visible { color: var(--red-dark); }

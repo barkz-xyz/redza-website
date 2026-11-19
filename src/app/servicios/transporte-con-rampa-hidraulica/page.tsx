@@ -6,7 +6,7 @@ import { SiteFooter, SiteHeader } from '../../SiteFrame';
 import PhoneAlternative from '../../PhoneAlternative';
 import { rampPath, rampQuote } from '../../service-links';
 import { siteUrl } from '../../site-url';
-import styles from './ramp.module.css';
+import styles from '../service.module.css';
 
 const name = 'Transporte de carga con rampa hidráulica';
 const title = 'Transporte con rampa hidráulica para empresas en Chile | Redza';

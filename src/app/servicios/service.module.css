@@ -6,6 +6,7 @@
 .figure { margin: 0; }
 .figure img { width: 100%; height: auto; max-block-size: 36rem; aspect-ratio: 4/5; object-fit: cover; object-position: center; }
 .figure figcaption { border-bottom: 1px solid var(--line); padding-block: .65rem; font: var(--label-size)/1.5 var(--font-dm-mono), monospace; text-transform: uppercase; }
+.figure .equipment { aspect-ratio: auto; }
 .grid ol + a { margin-block-start: 1.5rem; }
 @media (max-width: 900px) {
   .grid { grid-template-columns: minmax(0, 1fr); }
