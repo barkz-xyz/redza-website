@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <rect width="1080" height="1350" fill="#f3f3f1"/>
+  <rect x="0" y="0" width="1080" height="810" fill="#151517"/>
+  <path d="M0 810h1080v540H0z" fill="#e21a16" opacity=".94"/>
+  <text x="88" y="115" fill="#e21a16" font-family="DM Mono,monospace" font-size="18" letter-spacing="3">REDZA / OPERACION</text>
+  <text x="88" y="245" fill="#fff" font-family="Manrope,Arial,sans-serif" font-size="68" font-weight="800">TITULAR</text>
+  <text x="88" y="330" fill="#fff" font-family="Manrope,Arial,sans-serif" font-size="68" font-weight="800">PRINCIPAL.</text>
+  <text x="88" y="430" fill="#c4c4c7" font-family="Manrope,Arial,sans-serif" font-size="23">Una frase corta de prueba o contexto.</text>
+  <text x="88" y="1118" fill="#fff" font-family="DM Mono,monospace" font-size="18" letter-spacing="2">CTA / CUENTA LA PROXIMA RUTA</text>
+  <text x="88" y="1240" fill="#0b0b0c" font-family="Manrope,Arial,sans-serif" font-size="30" font-weight="800">www.redza.cl</text>
+</svg>

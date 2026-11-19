@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <rect width="1080" height="1920" fill="#0b0b0c"/>
+  <rect x="54" y="54" width="972" height="1812" rx="26" fill="#151517" stroke="#e21a16" stroke-width="2"/>
+  <text x="100" y="164" fill="#e21a16" font-family="DM Mono,monospace" font-size="18" letter-spacing="3">REDZA / 24-7</text>
+  <text x="100" y="1245" fill="#fff" font-family="Manrope,Arial,sans-serif" font-size="68" font-weight="800">TITULAR</text>
+  <text x="100" y="1325" fill="#e21a16" font-family="Manrope,Arial,sans-serif" font-size="68" font-weight="800">PRINCIPAL.</text>
+  <text x="100" y="1445" fill="#c4c4c7" font-family="Manrope,Arial,sans-serif" font-size="22">Prueba, ruta o pregunta.</text>
+  <line x1="100" y1="1580" x2="980" y2="1580" stroke="#38383c"/>
+  <text x="100" y="1660" fill="#fff" font-family="DM Mono,monospace" font-size="18" letter-spacing="2">ESCRIBENOS POR WHATSAPP</text>
+</svg>

@@ -5,7 +5,7 @@ export const chileRegions = [
   { id: "CLAT", name: "Atacama", hub: "Copiapó", service: "Distribución regional" },
   { id: "CLCO", name: "Coquimbo", hub: "La Serena", service: "Distribución regional" },
   { id: "CLVS", name: "Valparaíso", hub: "Valparaíso", service: "Puerto y última milla" },
-  { id: "CLRM", name: "Región Metropolitana", hub: "Santiago", service: "Centro de coordinación" },
+  { id: "CLRM", name: "Santiago", hub: "Santiago", service: "Centro de coordinación" },
   { id: "CLLI", name: "O'Higgins", hub: "Rancagua", service: "Distribución B2B" },
   { id: "CLML", name: "Maule", hub: "Talca", service: "Carga y abastecimiento" },
   { id: "CLNB", name: "Ñuble", hub: "Chillán", service: "Distribución regional" },
@@ -16,4 +16,8 @@ export const chileRegions = [
   { id: "CLAI", name: "Aysén", hub: "Coyhaique", service: "Operación austral" },
   { id: "CLMA", name: "Magallanes", hub: "Punta Arenas", service: "Operación austral" },
 ] as const;
+
+export const santiago = 'CLRM';
+// Accept older quotation links without listing Santiago twice.
+export const originName = (id: string | null) => chileRegions.find(r => r.id === (id === 'santiago' ? santiago : id))?.name;
 

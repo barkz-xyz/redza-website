@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="440" viewBox="0 0 920 440" role="img" aria-labelledby="title desc">
+  <title id="title">Redza — lockup V2 compacto blanco</title>
+  <desc id="desc">Versión compacta con el lettering y el truck oficiales de Redza.</desc>
+  <image href="../../../public/images/redza%20branding/white%20svgs/redza%20white%20lettering%20svg.svg" x="70" y="55" width="780" height="125" preserveAspectRatio="xMidYMid meet"/>
+  <path d="M70 226 H850" fill="none" stroke="#E21A16" stroke-width="5"/>
+  <path d="M850 226 l24 -14 v28 z" fill="#E21A16"/>
+  <image href="../../../public/images/redza%20branding/white%20svgs/white%20truck.svg" x="70" y="274" width="320" height="72" preserveAspectRatio="xMinYMid meet"/>
+  <text x="850" y="324" fill="#FFFFFF" font-family="DM Mono, monospace" font-size="18" text-anchor="end" letter-spacing="2">RZ / LOGÍSTICA</text>
+</svg>

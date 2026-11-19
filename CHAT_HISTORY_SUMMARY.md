@@ -1,6 +1,6 @@
 # Resumen del historial de trabajo — Redza Website
 
-Fecha de actualización: 27 de julio de 2026
+Fecha de actualización: 17 de septiembre de 2026
 
 ## Objetivo del proyecto
 
@@ -30,7 +30,7 @@ Assets principales creados:
 - `redza package icon.svg`
 - `redza ramp icon.svg`
 
-Estos recursos se integraron en el encabezado, hero, tarjetas de servicios, secciones de contenido, footer y fondos decorativos del sitio.
+Estos recursos formaron parte de una iteración anterior del encabezado, hero, tarjetas de servicios y fondos decorativos. En la auditoría de septiembre de 2026 se retiraron las referencias a los archivos `redesign/` eliminados: el sitio ahora conserva los SVG oficiales para los logos y usa CSS/Lucide para la geometría y los símbolos de apoyo.
 
 ## Mapa interactivo de Chile
 
@@ -79,6 +79,43 @@ Repositorio configurado:
 [bobo-labs/redza-website](https://github.com/bobo-labs/redza-website)
 
 La rama principal utilizada es `main` y quedó sincronizada con `origin/main`.
+
+## Estado de Vercel
+
+El sitio se desplegó correctamente en producción en:
+
+https://redzaweb-codex.vercel.app
+
+Proyecto: `redzaweb-codex` en la cuenta `bobo-labs-8827`.
+
+El deployment de corrección de contacto quedó `READY` con el identificador `2fRUHkZQqf9rDXXXSytvRs4sMPWa`. El repositorio de GitHub todavía no está conectado automáticamente a Vercel porque la integración no tenía acceso suficiente; por ahora el deploy se realiza desde la carpeta local con `vercel deploy --prod`.
+
+## Contacto oficial
+
+El número comercial confirmado es `+56 9 8788 5833`.
+
+Se actualizó en:
+
+- `src/app/page.tsx`: WhatsApp, `tel` y número visible.
+- `src/app/layout.tsx`: teléfono estructurado y FAQ.
+- `branding/README.md`: regla de contacto oficial.
+
+## Experimentos de logo V2
+
+Los experimentos V2 fueron rechazados y archivados en `branding/99-archive/logo-v2-rejected-2026-09-17/`. No se usan en el sitio ni en material activo. El sistema vigente sigue siendo el de los SVG oficiales blanco/negro de Redza; la producción no fue modificada por este archivo.
+
+## Manual de mantenimiento
+
+La documentación consolidada está en `branding/09-website-management/` y en `WEBSITE-MANAGEMENT.md`:
+
+- operaciones de Vercel;
+- edición de contenido y marca;
+- auditoría y hoja de ruta;
+- checklist de publicación.
+
+## Investigación de dominio
+
+La consulta exacta en WHOIS de NIC Chile del 17 de septiembre de 2026 mostró `redza.cl` disponible. Porkbun no mostró `.cl` como extensión registrable y solo ofreció alternativas `.com`/`.net`. La recomendación es registrar `redza.cl` directamente en NIC Chile y luego conectarlo al proyecto de Vercel. La investigación detallada está en `branding/10-domain-research/redza-cl-domain-research.md`.
 
 ## Estado de Railway
 

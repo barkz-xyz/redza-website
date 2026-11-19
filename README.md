@@ -34,5 +34,6 @@ npm start
 - [public/images](https://github.com/barkz-xyz/redza-website/tree/main/public/images) — brand assets and imagery
 - [Official white logos](public/images/redza%20branding/white%20svgs/) and [black logos](public/images/redza%20branding/black%20svgs/)
 - [Website modernization audit](branding/09-website-management/modern-web-guidance-audit.md)
+- [Umami: configuración, eventos y verificación](docs/umami.md)
 
 Built by [barkz](https://github.com/barkz-xyz).

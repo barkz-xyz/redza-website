@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0b0b0c"/>
+  <text x="72" y="84" fill="#e21a16" font-family="DM Mono,monospace" font-size="14" letter-spacing="2">REDZA / TYPE SYSTEM</text>
+  <text x="72" y="194" fill="#fff" font-family="Manrope,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-4">Tu carga</text>
+  <text x="72" y="274" fill="#e21a16" font-family="Manrope,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-4">no se detiene.</text>
+  <text x="72" y="354" fill="#c4c4c7" font-family="Manrope,Arial,sans-serif" font-size="22">Manrope 800 / headlines and key messages</text>
+  <line x1="72" y1="414" x2="1128" y2="414" stroke="#323236"/>
+  <text x="72" y="484" fill="#fff" font-family="Manrope,Arial,sans-serif" font-size="28" font-weight="600">Operación lista para avanzar.</text>
+  <text x="72" y="530" fill="#9a9a9e" font-family="Manrope,Arial,sans-serif" font-size="18">Manrope 400-700 / body, labels and CTA support</text>
+  <text x="72" y="620" fill="#e21a16" font-family="DM Mono,monospace" font-size="22" letter-spacing="2">RUTA / NORTE     24-7     RZ / 01</text>
+  <text x="72" y="660" fill="#9a9a9e" font-family="DM Mono,monospace" font-size="16">DM Mono / metadata, route codes and operational detail</text>
+</svg>

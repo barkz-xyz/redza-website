@@ -3,6 +3,8 @@ node_modules/
 out/
 dist/
 coverage/
+/tmp/
+__pycache__/
 
 .env*
 !.env.example

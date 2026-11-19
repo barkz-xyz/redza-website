@@ -6,57 +6,83 @@
 }
 
 .layout { display: grid; gap: .75rem; }
+.intro { min-inline-size: 0; container-type: inline-size; }
+.intro h2 { font-size: clamp(1.65rem, 8.5cqi, 4rem); }
+.intro button { max-inline-size: 100%; min-block-size: 3rem; padding: .4rem .4rem .4rem 1.25rem; gap: 1rem; }
+.quoteIcon { display: grid; place-items: center; flex: none; inline-size: 2rem; block-size: 2rem; border-radius: 50%; background: var(--cream); color: var(--red-dark); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .intro button:hover:not(:active) .quoteIcon svg { transform: translate(1px, -1px); }
+}
+.label + .label { margin-block-start: .8rem; }
+.mode { padding: .65rem 1rem; min-inline-size: 0; border-bottom: 1px solid #454549; }
+.mode legend { position: absolute; inline-size: 1px; block-size: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.switcher { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 2px; background: var(--ink); border-radius: .35rem; }
+.mode label { position: relative; display: flex; justify-content: center; align-items: center; min-block-size: 3rem; cursor: pointer; color: var(--map-muted); font-weight: 650; border-radius: .2rem; }
+.mode label:has(:checked) { background: #37373b; color: var(--paper); }
+.mode label:has(:focus-visible) { outline: 2px solid var(--cream); outline-offset: -2px; }
+.mode input { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; margin: 0; opacity: 0; cursor: pointer; }
 .detail, .stage { min-inline-size: 0; background: var(--map-panel); }
 .detail { padding: clamp(1rem, 4cqi, 1.75rem); align-content: center; }
 
-.label, .legend, .caption, .status {
+.label, .legend, .caption {
   font: 500 .75rem/1.5 var(--font-dm-mono), monospace;
   letter-spacing: .04em;
 }
-.label { display: block; margin-block-end: .375rem; }
+.label { display: block; margin-block-end: .375rem; color: var(--map-muted); }
 .select {
   inline-size: 100%;
-  min-block-size: 2.75rem;
-  padding: .5rem;
-  border: 1px solid #aaaab0;
-  border-radius: .25rem;
-  background: #262629;
-  color: inherit;
+  margin-block-start: .4rem;
+  min-block-size: 3rem;
+  padding: .5rem .25rem;
+  border: 0;
+  border-block-end: 1px solid var(--muted);
+  border-radius: 0;
+  background: var(--map-panel);
+  color: var(--cream);
   color-scheme: dark;
-  font: inherit;
-  font-size: 1rem;
+  font: 500 1rem/1.4 var(--font-manrope), sans-serif;
+  letter-spacing: normal;
   cursor: pointer;
 }
-.select:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
-.detail h3 {
-  margin: 1.5rem 0 .75rem;
-  font-size: clamp(1.5rem, 5cqi, 2.625rem);
-  font-weight: 800;
-  letter-spacing: -.05em;
-  line-height: 1.08;
-  overflow-wrap: break-word;
+.select:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media (hover: hover) {
+  .select:hover { border-block-end-color: var(--map-muted); }
 }
-.summary, .copy { margin: 0; font-size: .9375rem; line-height: 1.55; }
-.copy { margin-block-start: .75rem; color: var(--map-muted); }
-.status { display: flex; align-items: center; gap: .75rem; margin: 1.5rem 0 0; }
+.quoteNote { margin-block-start: 1.75rem; }
+.quoteNote h3 { margin: 0 0 .35rem; font: 650 1rem/1.4 var(--font-manrope), sans-serif; color: var(--cream); }
+.quoteNote p { margin: 0; max-inline-size: 39ch; font-size: .9375rem; line-height: 1.55; color: var(--map-muted); }
 
 .stage {
   display: grid;
   grid-template-rows: auto 1fr auto;
   border: 1px solid #454549;
-  background: radial-gradient(ellipse at center, #301f22, var(--map-panel) 68%);
+  background: var(--soft-black);
 }
 .legend, .caption { margin: 0; padding: .75rem 1rem; }
 .legend { color: var(--map-muted); }
-.caption { border-block-start: 1px solid #454549; }
+.caption { display: grid; gap: .375rem; border-block-start: 1px solid #454549; }
+.stop { display: grid; grid-template-columns: 1.375rem 8ch minmax(0,1fr); align-items: center; gap: .5rem; }
+.stop small { font: inherit; color: var(--map-muted); }
+.stop strong { font: 650 .9375rem/1.35 var(--font-manrope), sans-serif; letter-spacing: normal; overflow-wrap: anywhere; }
+.caption i { inline-size: 1.375rem; block-size: 1.375rem; display: grid; place-items: center; font-style: normal; }
+.originKey { background: var(--cream); color: var(--ink); border-radius: 50%; }
+.destinationKey { background: var(--red); color: var(--paper); border-radius: .15rem; }
+.destinationKey[data-pending] { background: none; border: 1px dashed var(--map-muted); color: var(--map-muted); }
+.marker { pointer-events: none; color: var(--cream); }
+.marker line { stroke: currentColor; stroke-width: 3; }
+.marker :is(rect,circle) { fill: currentColor; }
+.marker rect { stroke: var(--ink); stroke-width: 2; }
+.marker text { fill: var(--ink); font: 500 30px var(--font-dm-mono), monospace; }
+.marker[data-end="B"] rect { fill: var(--red); stroke: var(--cream); }
+.marker[data-end="B"] text { fill: var(--paper); }
 .stage svg { display: block; inline-size: 100%; block-size: 21rem; align-self: center; }
-.shape { fill: #ae302d; stroke: #f3c8c6; stroke-width: 1; cursor: pointer; }
-.shape:nth-child(3n + 2) { fill: #c94640; }
-.shape:nth-child(3n) { fill: #972623; }
+.shape { fill: #525257; stroke: #aaaab0; stroke-width: 1; cursor: pointer; }
 @media (hover: hover) {
-  .shape:hover:not([data-active]) { fill: #e96e62; }
+  .shape:hover:not([data-origin], [data-destination]) { fill: #828287; stroke: var(--cream); }
 }
-.shape[data-active] { fill: #ff8678; stroke: white; stroke-width: 2.5; }
+.shape[data-origin] { fill: var(--cream); stroke: var(--ink); stroke-width: 2; }
+.shape[data-destination] { fill: var(--red); stroke: var(--paper); stroke-width: 2.5; }
+.shape[data-origin][data-destination] { fill: var(--red); stroke: var(--cream); stroke-width: 4; stroke-dasharray: 5 2; }
 
 @container coverage (min-width: 34rem) {
   .layout { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); }
@@ -65,7 +91,13 @@
   .stage svg { block-size: 28rem; }
 }
 @media (forced-colors: active) {
+  .mode input:checked + span { text-decoration: underline; }
+  .mode label:has(:focus-visible) { outline-color: Highlight; }
+  .marker text, .marker[data-end="B"] text { fill: Canvas; }
+  .marker rect, .marker[data-end="B"] rect { fill: CanvasText; stroke: Canvas; }
+  .marker line { stroke: CanvasText; }
   .shape { fill: Canvas; stroke: CanvasText; }
-  .shape:nth-child(n)[data-active] { fill: Highlight; stroke: CanvasText; }
-  .shape:nth-child(n):not([data-active]) { fill: Canvas; }
+  .shape:nth-child(n)[data-origin] { fill: CanvasText; stroke: Canvas; }
+  .shape:nth-child(n)[data-destination] { fill: Highlight; stroke: CanvasText; }
+  .shape:nth-child(n):not([data-origin], [data-destination]) { fill: Canvas; }
 }

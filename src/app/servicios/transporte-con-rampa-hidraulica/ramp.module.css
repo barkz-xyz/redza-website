@@ -1,0 +1,13 @@
+.hero { background: var(--cream); padding-block: clamp(2rem, 5vw, 5rem); }
+.grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.index { margin-block: clamp(2rem, 4vw, 4rem) 1rem; }
+.hero h1 { max-inline-size: 15ch; }
+.hero p + a { margin-block-start: 1.5rem; }
+.figure { margin: 0; }
+.figure img { width: 100%; height: auto; max-block-size: 36rem; aspect-ratio: 4/5; object-fit: cover; object-position: center; }
+.figure figcaption { border-bottom: 1px solid var(--line); padding-block: .65rem; font: var(--label-size)/1.5 var(--font-dm-mono), monospace; text-transform: uppercase; }
+.grid ol + a { margin-block-start: 1.5rem; }
+@media (max-width: 900px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .figure img { aspect-ratio: 4/3; }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f3f3f1"/>
+  <text x="72" y="86" fill="#0b0b0c" font-family="Manrope,Arial,sans-serif" font-size="36" font-weight="800">REDZA / COLOR SYSTEM</text>
+  <text x="72" y="124" fill="#6d6d70" font-family="DM Mono,monospace" font-size="14" letter-spacing="2">DARK FIELD / SIGNAL RED / WARM PAPER</text>
+  <g transform="translate(72 190)">
+    <rect width="240" height="250" rx="18" fill="#0b0b0c"/><text x="24" y="205" fill="#fff" font-family="DM Mono,monospace" font-size="14">INK</text><text x="24" y="228" fill="#e21a16" font-family="DM Mono,monospace" font-size="16">#0B0B0C</text>
+    <rect x="264" width="240" height="250" rx="18" fill="#151517"/><text x="288" y="205" fill="#fff" font-family="DM Mono,monospace" font-size="14">SOFT BLACK</text><text x="288" y="228" fill="#e21a16" font-family="DM Mono,monospace" font-size="16">#151517</text>
+    <rect x="528" width="240" height="250" rx="18" fill="#e21a16"/><text x="552" y="205" fill="#fff" font-family="DM Mono,monospace" font-size="14">RED</text><text x="552" y="228" fill="#0b0b0c" font-family="DM Mono,monospace" font-size="16">#E21A16</text>
+    <rect x="792" width="240" height="250" rx="18" fill="#bb1512"/><text x="816" y="205" fill="#fff" font-family="DM Mono,monospace" font-size="14">RED DARK</text><text x="816" y="228" fill="#fff" font-family="DM Mono,monospace" font-size="16">#BB1512</text>
+  </g>
+  <g transform="translate(72 490)">
+    <rect width="496" height="150" rx="18" fill="#f3f3f1" stroke="#dedede"/><text x="24" y="82" fill="#0b0b0c" font-family="DM Mono,monospace" font-size="14">CREAM  #F3F3F1</text>
+    <rect x="520" width="496" height="150" rx="18" fill="#fff" stroke="#dedede"/><text x="544" y="82" fill="#0b0b0c" font-family="DM Mono,monospace" font-size="14">WHITE  #FFFFFF</text>
+  </g>
+</svg>

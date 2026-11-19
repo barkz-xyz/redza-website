@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">Redza Transporte y Logística — lockup V2 negro</title>
+  <desc id="desc">Lockup V2 compuesto con el lettering y el truck oficiales de Redza.</desc>
+  <defs>
+    <style>
+      .descriptor { font-family: Manrope, Arial, sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 5px; }
+    </style>
+  </defs>
+  <g transform="translate(110 112)">
+    <image href="../../../public/images/redza%20branding/black%20svgs/lettering%20black%20svg.svg" x="0" y="0" width="980" height="158" preserveAspectRatio="xMinYMid meet"/>
+    <path d="M0 222 H1132" fill="none" stroke="#E21A16" stroke-width="5"/>
+    <path d="M1132 222 l28 -16 v32 z" fill="#E21A16"/>
+    <image href="../../../public/images/redza%20branding/black%20svgs/black%20truck%20svg.svg" x="1210" y="147" width="280" height="63" preserveAspectRatio="xMinYMid meet"/>
+    <text class="descriptor" x="0" y="290" fill="#0B0B0C">TRANSPORTE · DISTRIBUCIÓN · LOGÍSTICA</text>
+    <text x="1490" y="290" fill="#BB1512" font-family="DM Mono, monospace" font-size="18" text-anchor="end" letter-spacing="3">RZ / V2</text>
+  </g>
+</svg>

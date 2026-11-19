@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="980" viewBox="0 0 1440 980">
+  <rect width="1440" height="980" fill="#F3F3F1"/>
+  <text x="72" y="82" fill="#0B0B0C" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="800">REDZA / LOGO V2</text>
+  <text x="72" y="119" fill="#BB1512" font-family="DM Mono, monospace" font-size="14" letter-spacing="2">OFFICIAL ARTWORK / RESPONSIVE LOCKUP SYSTEM</text>
+  <rect x="72" y="165" width="1296" height="300" fill="#0B0B0C"/>
+  <text x="110" y="210" fill="#E21A16" font-family="DM Mono, monospace" font-size="13" letter-spacing="2">DARK SURFACE / WHITE VARIANT</text>
+  <image href="redza-v2-horizontal-white.svg" x="135" y="245" width="1170" height="382" preserveAspectRatio="xMidYMid meet"/>
+  <rect x="72" y="515" width="1296" height="300" fill="#FFFFFF" stroke="#DEDEDE"/>
+  <text x="110" y="560" fill="#BB1512" font-family="DM Mono, monospace" font-size="13" letter-spacing="2">LIGHT SURFACE / BLACK VARIANT</text>
+  <image href="redza-v2-horizontal-black.svg" x="135" y="595" width="1170" height="382" preserveAspectRatio="xMidYMid meet"/>
+  <text x="72" y="885" fill="#555559" font-family="Manrope, Arial, sans-serif" font-size="18">No estirar · no rotar · no recolorear · no colocar sobre fondos sin contraste</text>
+  <text x="1368" y="885" fill="#BB1512" font-family="DM Mono, monospace" font-size="14" text-anchor="end" letter-spacing="2">REDZA.CL</text>
+</svg>
