@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 
 import { siteUrl } from './site-url';
+import { umamiConfig } from '../umami';
 
 const manrope = localFont({
   src: '../../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2',
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const analytics = umamiConfig(process.env);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -51,7 +53,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es-CL" className={`${manrope.variable} ${dmMono.variable}`}>
       <head><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {analytics && <script defer fetchPriority="low" src="/stats/script.js"
+          data-website-id={analytics.id} data-host-url="/stats" data-domains={analytics.hostname}
+          data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true" />}
+      </body>
     </html>
   );
 }

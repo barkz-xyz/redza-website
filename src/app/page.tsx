@@ -80,13 +80,14 @@ export default function Home() {
             <a href="#cobertura">Cobertura</a>
             <a href="#contacto">Contacto</a>
           </nav>
-          <a className="nav-cta" href={whatsappLink} target="_blank" rel="noreferrer">Cotizar ahora <ArrowUpRight size={16} /></a>
+          <a className="nav-cta" data-umami-event="whatsapp-nav-quote" href={whatsappLink} target="_blank" rel="noreferrer">Cotizar ahora <ArrowUpRight size={16} /></a>
           <MobileNavigation>
               <a href="#servicios">Servicios</a>
               <a href="#metodo">Cómo trabajamos</a>
               <a href="#clientes">Clientes</a>
               <a href="#cobertura">Cobertura</a>
               <a href="#contacto">Contacto</a>
+              <a data-umami-event="whatsapp-nav-quote" href={whatsappLink} target="_blank" rel="noreferrer">Cotizar por WhatsApp</a>
           </MobileNavigation>
         </div>
       </header>
@@ -101,7 +102,7 @@ export default function Home() {
             <h1 id="contenido" tabIndex={-1}>Que tu carga<br /><em>no se detenga.</em></h1>
             <p className="hero-lede">Transporte confiable para empresas que necesitan cumplir. Conectamos tu operación con todo Chile, desde el retiro hasta la entrega final.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href={whatsappLink} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Solicitar cotización</a>
+              <a className="button button-primary" data-umami-event="whatsapp-quote" href={whatsappLink} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Solicitar cotización</a>
               <a className="text-link" href="#servicios">Explorar servicios <ArrowUpRight size={16} /></a>
             </div>
             <div className="hero-trust"><ShieldCheck size={17} /><span>Operación coordinada · Atención directa · Respuesta ágil</span></div>
@@ -133,7 +134,7 @@ export default function Home() {
                 <div className="card-top"><span>{number}</span><ServiceIcon size={42} strokeWidth={1.35} className="service-icon" aria-hidden="true" /></div>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <a href={quoteLink(`Hola Redza, necesito cotizar el servicio de ${title}.`)} target="_blank" rel="noreferrer" aria-label={`Cotizar servicio: ${title}`}>
+                <a data-umami-event="whatsapp-service-quote" href={quoteLink(`Hola Redza, necesito cotizar el servicio de ${title}.`)} target="_blank" rel="noreferrer" aria-label={`Cotizar servicio: ${title}`}>
                   Cotizar servicio <ArrowUpRight size={16} />
                 </a>
               </article>
@@ -163,7 +164,7 @@ export default function Home() {
           <div className="field-gallery">
             <figure className="field-card field-card-main"><Image src="/images/redza_fotos/optimized/redza-manipulacion-carga-traspaleta.webp" alt="Carga palletizada preparada dentro de un camión Redza" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 50vw" /><figcaption><span>OPERACIÓN / 01</span><strong>Carga asegurada antes de salir.</strong></figcaption></figure>
             <figure className="field-card field-card-route"><Image src="/images/redza_fotos/optimized/redza-ruta-la-mano-del-desierto.webp" alt="Camión Redza en ruta junto a La Mano del Desierto, Antofagasta" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw" /><figcaption><span>RUTA / NORTE</span><strong>Una cobertura que cruza el desierto.</strong></figcaption></figure>
-            <div className="field-note"><span>RZ / 05</span><p>Una flota visible, cuidada y preparada para que tu operación avance.</p><a className="text-link" href={whatsappLink} target="_blank" rel="noreferrer">Coordinar una ruta <ArrowUpRight size={16} /></a></div>
+            <div className="field-note"><span>RZ / 05</span><p>Una flota visible, cuidada y preparada para que tu operación avance.</p><a className="text-link" data-umami-event="whatsapp-quote" href={whatsappLink} target="_blank" rel="noreferrer">Coordinar una ruta <ArrowUpRight size={16} /></a></div>
             <figure className="field-card field-card-yard"><Image src="/images/redza_fotos/optimized/redza-flota-vehiculos-distribucion.webp" alt="Vehículos de distribución Redza estacionados en patio operativo" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw" /><figcaption><span>FLOTA / 02</span><strong>Vehículos para cada recorrido.</strong></figcaption></figure>
             <figure className="field-card field-card-patio"><Image src="/images/redza_fotos/optimized/redza-flota-camiones-patio.webp" alt="Camiones Redza preparados en un patio logístico" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw" /><figcaption><span>PATIO / 03</span><strong>Coordinación desde el origen.</strong></figcaption></figure>
             <aside className="field-operations-board" aria-label="Flujo operativo Redza">
@@ -185,7 +186,7 @@ export default function Home() {
       </section>
 
       <section className="coverage-section section-pad" id="cobertura">
-        <div className="shell coverage-grid"><div><p className="eyebrow"><span>06</span> Llegamos más lejos</p><h2>Desde Santiago<br />a todo <em>Chile.</em></h2><p className="coverage-copy">Construimos rutas para que tus productos lleguen a donde tienen que estar. Cobertura urbana, interurbana y nacional según la necesidad de tu operación.</p><a className="button button-light" href={whatsappLink} target="_blank" rel="noreferrer">Planificar una ruta <ArrowUpRight size={17} /></a></div><div className="map-card regions-map-card"><ChileRegionsMap /><div className="map-lines" aria-hidden="true" /><div className="map-point point-santiago"><span /><label>Santiago</label></div><div className="map-point point-north"><span /><label>Regiones</label></div><div className="map-point point-south"><span /><label>Sur de Chile</label></div><div className="map-route" aria-hidden="true" /><div className="map-footer"><span>COBERTURA</span><strong>URBANA · REGIONAL · NACIONAL</strong></div></div></div>
+        <div className="shell coverage-grid"><div><p className="eyebrow"><span>06</span> Llegamos más lejos</p><h2>Desde Santiago<br />a todo <em>Chile.</em></h2><p className="coverage-copy">Construimos rutas para que tus productos lleguen a donde tienen que estar. Cobertura urbana, interurbana y nacional según la necesidad de tu operación.</p><a className="button button-light" data-umami-event="whatsapp-route-quote" href={whatsappLink} target="_blank" rel="noreferrer">Planificar una ruta <ArrowUpRight size={17} /></a></div><div className="map-card regions-map-card"><ChileRegionsMap /><div className="map-lines" aria-hidden="true" /><div className="map-point point-santiago"><span /><label>Santiago</label></div><div className="map-point point-north"><span /><label>Regiones</label></div><div className="map-point point-south"><span /><label>Sur de Chile</label></div><div className="map-route" aria-hidden="true" /><div className="map-footer"><span>COBERTURA</span><strong>URBANA · REGIONAL · NACIONAL</strong></div></div></div>
       </section>
 
       <section className="clients-section section-pad" id="clientes">
@@ -193,14 +194,14 @@ export default function Home() {
           <div className="clients-heading"><div><p className="eyebrow"><span>07</span> Confianza que se mueve</p><h2>Empresas que<br /><em>confían en Redza.</em></h2></div><p>Nos eligen porque cada entrega necesita más que un camión: necesita coordinación, cuidado y una respuesta que no se detenga.</p></div>
           <div className="clients-grid">
             {clients.map((client) => <article className="client-card" key={client.name}><div className="client-card-top"><span>CLIENTE / {client.number}</span><ArrowUpRight size={16} /></div><div className="client-logo-wrap"><Image src={client.src} alt={client.alt} width={240} height={150} sizes="(max-width: 900px) 100vw, 30vw" className="client-logo" /></div><div className="client-card-bottom"><strong>{client.name}</strong><span>{client.service}</span></div></article>)}
-            <div className="client-note"><ShieldCheck size={23} /><div><strong>Tu operación, en buenas manos.</strong><p>Sumamos experiencia y seguimiento para que tu marca llegue bien representada a cada destino.</p><a className="text-link" href={whatsappLink} target="_blank" rel="noreferrer">Conversemos sobre tu operación <ArrowUpRight size={16} /></a></div></div>
+            <div className="client-note"><ShieldCheck size={23} /><div><strong>Tu operación, en buenas manos.</strong><p>Sumamos experiencia y seguimiento para que tu marca llegue bien representada a cada destino.</p><a className="text-link" data-umami-event="whatsapp-quote" href={whatsappLink} target="_blank" rel="noreferrer">Conversemos sobre tu operación <ArrowUpRight size={16} /></a></div></div>
           </div>
         </div>
       </section>
 
       <section className="numbers-section section-pad"><div className="shell numbers-grid"><div><p className="eyebrow"><span>08</span> Por qué Redza</p><h2>El valor está en<br /><em>cómo lo hacemos.</em></h2></div><div className="numbers-list">{stats.map(([number, text]) => <div key={number}><strong>{number}</strong><span>{text}</span></div>)}</div></div></section>
 
-      <section className="contact-section" id="contacto"><div className="shell contact-grid"><div><p className="eyebrow"><span>09</span> Empecemos</p><h2>Tu próxima entrega<br /><em>parte aquí.</em></h2><p>Cuéntanos sobre tu operación y preparemos el recorrido correcto para tu carga.</p></div><div className="contact-card"><div><span className="contact-kicker">Respuesta directa</span><h3>Hablemos por WhatsApp</h3><p>Disponible para cotizaciones y coordinación de servicios.</p></div><a className="contact-action" href={whatsappLink} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Escribir a Redza <ArrowUpRight size={17} /></a><div className="contact-details"><a href="tel:+56987885833"><PhoneCall size={16} /> +56 9 8788 5833</a><span><Clock3 size={16} /> Lunes a domingo · servicio continuo</span></div></div></div></section>
+      <section className="contact-section" id="contacto"><div className="shell contact-grid"><div><p className="eyebrow"><span>09</span> Empecemos</p><h2>Tu próxima entrega<br /><em>parte aquí.</em></h2><p>Cuéntanos sobre tu operación y preparemos el recorrido correcto para tu carga.</p></div><div className="contact-card"><div><span className="contact-kicker">Respuesta directa</span><h3>Hablemos por WhatsApp</h3><p>Disponible para cotizaciones y coordinación de servicios.</p></div><a className="contact-action" data-umami-event="whatsapp-quote" href={whatsappLink} target="_blank" rel="noreferrer"><MessageCircle size={20} /> Escribir a Redza <ArrowUpRight size={17} /></a><div className="contact-details"><a data-umami-event="phone-call" href="tel:+56987885833"><PhoneCall size={16} /> +56 9 8788 5833</a><span><Clock3 size={16} /> Lunes a domingo · servicio continuo</span></div></div></div></section>
       </main>
 
       <footer className="site-footer"><div className="shell footer-top"><a href="#inicio" className="brand footer-brand" aria-label="Redza, volver al inicio"><span className="footer-brand-stage" aria-hidden="true"><Image src="/images/redza branding/white svgs/redza white lettering svg.svg" alt="" width={2182} height={350} className="footer-lettering" /><Image src="/images/redza branding/white svgs/white truck.svg" alt="" width={2183} height={488} className="footer-truck" /></span></a><div className="footer-links"><a href="#servicios">Servicios</a><a href="#metodo">Cómo trabajamos</a><a href="#clientes">Clientes</a><a href="#cobertura">Cobertura</a><a href="#contacto">Contacto</a></div><div className="footer-location"><MapPin size={16} /> Santiago, Chile</div></div><div className="shell footer-bottom"><span>© 2026 Redza Transporte y Logística</span><span>Movemos lo que importa · Santiago, Chile.</span></div></footer>
