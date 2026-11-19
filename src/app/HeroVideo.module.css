@@ -1,0 +1,31 @@
+/* Soften the footage once; the glass tint needs no live backdrop blur. */
+.frame :global(.hero-video-glass) {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.frame:global(.hero-video-frame.is-softened) :global(.hero-video) {
+  filter: grayscale(.44) sepia(.07) saturate(.62) contrast(1.1) brightness(.75) blur(7px);
+}
+
+.frame :global(.hero-video-status) span {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .frame[data-playing="true"] :global(.hero-video-status) span {
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  50% { opacity: .6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame :global(.hero-video),
+  .frame:hover :global(.hero-video) {
+    transform: none;
+    transition: none;
+  }
+}

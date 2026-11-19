@@ -1,0 +1,65 @@
+.strip {
+  display: flex;
+  align-items: center;
+}
+
+.viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.strip .track {
+  width: 100%;
+  animation: none;
+  will-change: auto;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group li { flex: 1 0 auto; }
+.group li span { width: 100%; justify-content: center; }
+.group[aria-hidden="true"], .control { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .strip .track {
+    width: max-content;
+    animation: drift 28s linear infinite paused;
+  }
+
+  .strip .track[data-running="true"] { animation-play-state: running; }
+
+  .group, .group[aria-hidden="true"] {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    min-width: 100vw;
+  }
+
+  .control {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    flex: none;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin-inline: 4px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    cursor: pointer;
+  }
+}
+
+@keyframes drift {
+  to { transform: translateX(-50%); }
+}

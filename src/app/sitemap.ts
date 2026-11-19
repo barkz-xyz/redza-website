@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { siteUrl } from './site-url';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: 'https://www.redza.cl', lastModified: new Date('2026-07-22'), changeFrequency: 'monthly', priority: 1 }];
+  return [{ url: siteUrl }];
 }

@@ -32,6 +32,7 @@ npm start
 
 - [src/app](https://github.com/barkz-xyz/redza-website/tree/main/src/app) — page, layout, and interface components
 - [public/images](https://github.com/barkz-xyz/redza-website/tree/main/public/images) — brand assets and imagery
-- [Brand system notes](public/images/redza%20branding/redesign-v2/README.md)
+- [Official white logos](public/images/redza%20branding/white%20svgs/) and [black logos](public/images/redza%20branding/black%20svgs/)
+- [Website modernization audit](branding/09-website-management/modern-web-guidance-audit.md)
 
 Built by [barkz](https://github.com/barkz-xyz).

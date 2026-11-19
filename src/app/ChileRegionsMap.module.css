@@ -1,0 +1,71 @@
+.container {
+  container: coverage / inline-size;
+  color: #fafafa;
+  --map-panel: #1b1b1f;
+  --map-muted: #ceced2;
+}
+
+.layout { display: grid; gap: .75rem; }
+.detail, .stage { min-inline-size: 0; background: var(--map-panel); }
+.detail { padding: clamp(1rem, 4cqi, 1.75rem); align-content: center; }
+
+.label, .legend, .caption, .status {
+  font: 500 .75rem/1.5 var(--font-dm-mono), monospace;
+  letter-spacing: .04em;
+}
+.label { display: block; margin-block-end: .375rem; }
+.select {
+  inline-size: 100%;
+  min-block-size: 2.75rem;
+  padding: .5rem;
+  border: 1px solid #aaaab0;
+  border-radius: .25rem;
+  background: #262629;
+  color: inherit;
+  color-scheme: dark;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.select:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.detail h3 {
+  margin: 1.5rem 0 .75rem;
+  font-size: clamp(1.5rem, 5cqi, 2.625rem);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: 1.08;
+  overflow-wrap: break-word;
+}
+.summary, .copy { margin: 0; font-size: .9375rem; line-height: 1.55; }
+.copy { margin-block-start: .75rem; color: var(--map-muted); }
+.status { display: flex; align-items: center; gap: .75rem; margin: 1.5rem 0 0; }
+
+.stage {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border: 1px solid #454549;
+  background: radial-gradient(ellipse at center, #301f22, var(--map-panel) 68%);
+}
+.legend, .caption { margin: 0; padding: .75rem 1rem; }
+.legend { color: var(--map-muted); }
+.caption { border-block-start: 1px solid #454549; }
+.stage svg { display: block; inline-size: 100%; block-size: 21rem; align-self: center; }
+.shape { fill: #ae302d; stroke: #f3c8c6; stroke-width: 1; cursor: pointer; }
+.shape:nth-child(3n + 2) { fill: #c94640; }
+.shape:nth-child(3n) { fill: #972623; }
+@media (hover: hover) {
+  .shape:hover:not([data-active]) { fill: #e96e62; }
+}
+.shape[data-active] { fill: #ff8678; stroke: white; stroke-width: 2.5; }
+
+@container coverage (min-width: 34rem) {
+  .layout { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); }
+  .stage { grid-area: 1 / 1; }
+  .detail { grid-area: 1 / 2; }
+  .stage svg { block-size: 28rem; }
+}
+@media (forced-colors: active) {
+  .shape { fill: Canvas; stroke: CanvasText; }
+  .shape:nth-child(n)[data-active] { fill: Highlight; stroke: CanvasText; }
+  .shape:nth-child(n):not([data-active]) { fill: Canvas; }
+}
