@@ -6,7 +6,11 @@ Redza usa **Umami Cloud Hobby**. La web no abre conexiones a Postgres. Sin Websi
 
 1. Elige [Hobby gratis](https://umami.is/pricing), no la prueba de Pro. Registra el sitio Redza en **Websites** y copia su **Website ID** público.
 2. En Vercel, proyecto Redza → Settings → Environment Variables → **Production**, configura `NEXT_PUBLIC_UMAMI_WEBSITE_ID` y `SITE_URL` (origen HTTPS canónico). Deja **sin definir** `UMAMI_ORIGIN` y mantén habilitada la variable de sistema `VERCEL_ENV`. No se usan claves API, secretos ni credenciales de Neon.
-3. Recompila solo cuando quieras activar la medición. De acuerdo con la [guía oficial](https://docs.umami.is/docs/bypass-ad-blockers), el GET de `/stats/script.js` va a `https://cloud.umami.is/script.js` y el POST de `/stats/api/send` a `https://gateway.umami.is/api/send`. El plan de Cloud es independiente del hosting de Redza.
+3. Recompila solo cuando quieras activar la medición. El GET de `/stats/script.js` se reescribe a `https://cloud.umami.is/script.js`. El POST de `/stats/api/send` llega a una función de Redza que envía el evento a `https://gateway.umami.is/api/send`. Ambas solicitudes del navegador siguen en el dominio de Redza.
+
+### Cómo se determina el país
+
+La función solo opera en Vercel Production para el dominio y Website ID configurados. Toma la IP de [la cabecera de entrada de Vercel](https://vercel.com/docs/headers/request-headers#x-vercel-forwarded-for) y la reenvía como `X-Forwarded-For` junto con el User-Agent, siguiendo el [ejemplo oficial de Umami Cloud](https://docs.umami.is/docs/bypass-ad-blockers). Si falta una IP válida, descarta el evento en vez de atribuirlo a la salida del proxy. No añade la IP al evento ni la escribe en logs de la aplicación. No hay que configurar `CLIENT_IP_HEADER` en Redza: no controla el servicio administrado de Umami. El país es una estimación de la IP pública, no GPS; una VPN, el operador o la base GeoIP pueden cambiar el resultado. [Cómo calcula la ubicación Umami](https://docs.umami.is/docs/metric-definitions#reverse-proxies-and-umami-cloud).
 
 ## Alternativa para pruebas con Neon (sin Umami Cloud)
 
@@ -29,10 +33,10 @@ Solo si necesitas probar tu propia base: usa una instancia autoalojada y un Webs
 ## Qué se mide
 
 - Vistas de página y clics de intención en WhatsApp y teléfono. Ejemplos: `whatsapp-ramp-quote`, `whatsapp-refrigerated-quote`, `whatsapp-route-quote`, `phone-call`. Los clics del menú se separan como `whatsapp-nav-quote`; filtra por la página para distinguir rampa de portada. No significan una conversación iniciada ni una venta.
-- Sin identificadores de clientes, datos del formulario, grabaciones, eventos de scroll ni selección de regiones. Se excluyen parámetros y fragmentos de URL; esto también sacrifica atribución por UTM. Se respeta Do Not Track. Para excluir visitas propias, usa la [opción oficial de exclusión](https://docs.umami.is/docs/exclude-my-own-visits).
+- Sin identificadores de clientes, datos del formulario, grabaciones, eventos de scroll ni selección de regiones. Se excluyen parámetros y fragmentos de URL; esto también sacrifica atribución por UTM. La señal «No rastrear» (DNT) por sí sola no desactiva la medición. Sigue disponible la [opción oficial de exclusión por navegador](https://docs.umami.is/docs/exclude-my-own-visits).
 - Solo se reenvían `/stats/script.js` y `/stats/api/send` al upstream. El dashboard, login y API administrativa no se publican bajo Redza. Deja los nombres predeterminados de tracker y colector en Umami. La ruta propia no garantiza que todos los bloqueadores permitan la medición.
 - En Cloud, revisa el uso de eventos en el panel. Solo en el laboratorio con Neon: deja que la base se suspenda, sin pings periódicos, y revisa mensualmente almacenamiento y CU-horas.
 
 ## Comprobación al publicar
 
-En una sesión de prueba autorizada y sin exclusión activa, abre la portada en el dominio canónico. En Network comprueba un GET exitoso a `/stats/script.js` y un POST a `/stats/api/send`. Toca «Cotizar transporte con rampa» en la página de rampa y confirma en Umami un solo `whatsapp-ramp-quote`, sin enviar el mensaje. En Preview y localhost no debe haber solicitudes a `/stats/`. Si necesitas apagar la integración, quita el Website ID y recompila Redza.
+Desde Chrome en Android, deja DNT activado y usa datos móviles chilenos sin VPN ni exclusión manual de Umami. Abre la página de rampa del dominio canónico en una sesión nueva; anota la hora. Toca el botón de cotización de la rampa sin enviar el mensaje. En Umami → Realtime, busca la nueva vista de esa página, el evento `whatsapp-ramp-quote` y el país de esa sesión. Las visitas antiguas no se recalculan. Si no aparece nada, comprueba en Network que tanto el GET a `/stats/script.js` como el POST a `/stats/api/send` responden con éxito. Si aparece otro país, repite por Wi-Fi sin VPN para distinguir la red del teléfono del proxy. En Preview y localhost no debe haber solicitudes a `/stats/`. Para apagar la integración, quita el Website ID y recompila Redza.

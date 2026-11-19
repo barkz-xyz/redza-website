@@ -7,12 +7,12 @@ const nextConfig: NextConfig = {
   async rewrites() {
     const config = umamiConfig(process.env);
     if (!config) return [];
-    // Only the tracker and collection endpoint belong on the public Redza origin.
-    return [['/stats/script.js', config.scriptUrl], ['/stats/api/send', config.collectUrl]].map(([source, destination]) => ({
-      source,
+    // Collection uses a route handler so we can forward the trusted visitor IP.
+    return [{
+      source: '/stats/script.js',
       has: [{ type: 'host' as const, value: config.hostname.replaceAll('.', '\\.') }],
-      destination,
-    }));
+      destination: config.scriptUrl,
+    }];
   },
   async headers() {
     return [{

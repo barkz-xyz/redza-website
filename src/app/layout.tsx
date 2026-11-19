@@ -50,7 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         {analytics && <script defer fetchPriority="low" src="/stats/script.js"
           data-website-id={analytics.id} data-host-url="/stats" data-domains={analytics.hostname}
-          data-do-not-track="true" data-exclude-search="true" data-exclude-hash="true" />}
+          data-exclude-search="true" data-exclude-hash="true" />}
       </body>
     </html>
   );
