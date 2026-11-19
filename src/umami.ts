@@ -13,10 +13,12 @@ export function umamiConfig(env: NodeJS.ProcessEnv) {
   if (site.protocol !== 'https:' || site.hostname === 'localhost' || !site.hostname.includes('.') || /^[\d.]+$/.test(site.hostname)) {
     throw new Error('SITE_URL must identify the public HTTPS production domain.');
   }
+  const isCloud = upstream.origin === 'https://cloud.umami.is';
   return {
     id,
     scriptUrl: upstream.origin + '/script.js',
-    collectUrl: (upstream.origin === 'https://cloud.umami.is' ? 'https://gateway.umami.is' : upstream.origin) + '/api/send',
+    trackerHost: isCloud ? 'https://gateway.umami.is' : '/stats',
+    proxyCollectUrl: isCloud ? null : upstream.origin + '/api/send',
     hostname: site.hostname,
   };
 }

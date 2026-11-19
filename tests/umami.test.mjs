@@ -4,7 +4,18 @@ import { umamiConfig } from '../src/umami.ts';
 import { forwardEvent } from '../src/umami-collector.ts';
 
 const env = { NODE_ENV: 'production', VERCEL_ENV: 'production', NEXT_PUBLIC_UMAMI_WEBSITE_ID: 'test-id', SITE_URL: 'https://redza.example' };
-const config = umamiConfig(env);
+const lab = umamiConfig({ ...env, UMAMI_ORIGIN: 'https://lab.example' });
+const config = { ...lab, collectUrl: lab.proxyCollectUrl };
+test('Cloud uses the direct gateway and disables the event proxy; the separate lab keeps its proxy', () => {
+  for (const origin of [undefined, 'https://cloud.umami.is']) {
+    const cloud = umamiConfig({ ...env, UMAMI_ORIGIN: origin });
+    assert.equal(cloud.trackerHost, 'https://gateway.umami.is');
+    assert.equal(cloud.scriptUrl, 'https://cloud.umami.is/script.js');
+    assert.equal(cloud.proxyCollectUrl, null);
+  }
+  assert.equal(lab.trackerHost, '/stats');
+  assert.equal(lab.proxyCollectUrl, 'https://lab.example/api/send');
+});
 const event = { type: 'event', payload: { website: config.id, hostname: config.hostname, url: '/' } };
 function request(headers = {}, body = event) {
   return new Request(env.SITE_URL + '/stats/api/send', { method: 'POST', body: JSON.stringify(body), headers: {
@@ -25,7 +36,7 @@ test('with DNT, forwards only the Vercel visitor IP and tracker metadata; preser
     const req = request({ dnt: '1', cookie: 'private=true', authorization: 'private',
       'x-vercel-forwarded-for': ip, 'x-forwarded-for': '192.0.2.1', 'x-umami-cache': 'test-cache' });
     const response = await forwardEvent(req, config, async (url, init) => {
-      assert.equal(url, 'https://gateway.umami.is/api/send');
+      assert.equal(url, 'https://lab.example/api/send');
       assert.equal(init.headers.get('x-forwarded-for'), ip);
       assert.equal(init.headers.get('user-agent'), 'Test Android');
       assert.equal(init.headers.get('x-umami-cache'), 'test-cache');

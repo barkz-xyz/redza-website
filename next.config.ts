@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     const config = umamiConfig(process.env);
     if (!config) return [];
-    // Collection uses a route handler so we can forward the trusted visitor IP.
+    // Proxy only the script. Cloud events go directly from the browser to Umami.
     return [{
       source: '/stats/script.js',
       has: [{ type: 'host' as const, value: config.hostname.replaceAll('.', '\\.') }],
