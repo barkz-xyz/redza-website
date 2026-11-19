@@ -2,11 +2,15 @@
 
 import { Eye, EyeOff, Pause, Play } from 'lucide-react';
 import Image from 'next/image';
+import { preload } from 'react-dom';
 import { useEffect, useRef, useState } from 'react';
 import { observeMotionVisibility } from './observeMotionVisibility';
 import styles from './HeroVideo.module.css';
 
 const poster = '/images/redza_fotos/optimized/redza-hero-operacion-poster.webp';
+const posterBase = '/images/redza_fotos/optimized/redza-hero-poster';
+const posterSources = `${posterBase}-384.avif 384w, ${posterBase}-480.avif 480w`;
+const posterSizes = '(max-width: 520px) calc(100vw - 30px), (max-width: 900px) min(680px, 100vw - 36px), 50vw';
 const movie = '/images/redza_fotos/optimized/redza-hero-operacion-light.mp4';
 
 function playVideo(video: HTMLVideoElement) {
@@ -16,6 +20,8 @@ function playVideo(video: HTMLVideoElement) {
 }
 
 export default function HeroVideo() {
+  // The preload and picture must select exactly the same resource, including on high-DPR phones.
+  preload(`${posterBase}-480.avif`, { as: 'image', type: 'image/avif', imageSrcSet: posterSources, imageSizes: posterSizes, fetchPriority: 'high' });
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isClear, setIsClear] = useState(true);
   const [playing, setPlaying] = useState(false);
@@ -79,8 +85,11 @@ export default function HeroVideo() {
         preload="none"
         aria-hidden="true"
       />
-      {!hasPlayed && <Image className="hero-video" src={poster} width={480} height={480}
-        alt="" loading="eager" fetchPriority="high" unoptimized />}
+      {!hasPlayed && <picture>
+        <source type="image/avif" srcSet={posterSources} sizes={posterSizes} />
+        <Image className="hero-video" src={poster} width={480} height={480}
+          alt="" loading="eager" fetchPriority="high" unoptimized />
+      </picture>}
       <div className="hero-video-grade" aria-hidden="true" />
       <div className="hero-video-glass" aria-hidden="true" />
       <div className="hero-video-gridlines" aria-hidden="true" />

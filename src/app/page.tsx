@@ -127,7 +127,18 @@ export default function Home() {
 
       <section className="proof-section section-pad" id="metodo" tabIndex={-1}>
         <div className="shell proof-grid">
-          <div className="proof-image"><span className="proof-image-label">FLOTA / OPERACIÓN</span><Image src="/images/redza_fotos/optimized/redza-flota-camiones-operacion.webp" alt="Flota de camiones Redza frente a un centro de distribución" fill sizes="(max-width: 900px) 100vw, 42vw" className="proof-photo-main" /><span className="proof-photo-grade" aria-hidden="true" /><span className="proof-photo-overlay">OPERACIÓN REAL<br /><strong>LISTOS PARA SALIR</strong></span><span className="proof-stamp">RZ / 2026</span></div>
+          <div className="proof-image">
+            <span className="proof-image-label">FLOTA / OPERACIÓN</span>
+            <picture>
+              <source media="(min-width: 320px) and (max-width: 900px)" type="image/avif"
+                srcSet="/images/redza_fotos/optimized/redza-flota-movil-400.avif 400w, /images/redza_fotos/optimized/redza-flota-movil-720.avif 720w"
+                sizes="(max-width: 520px) calc(100vw - 30px), min(680px, 100vw - 36px)" />
+              <Image src="/images/redza_fotos/optimized/redza-flota-camiones-operacion.webp" alt="Flota de camiones Redza frente a un centro de distribución" fill sizes="(max-width: 520px) calc(100vw - 30px), (max-width: 900px) min(680px, 100vw - 36px), 42vw" className="proof-photo-main" />
+            </picture>
+            <span className="proof-photo-grade" aria-hidden="true" />
+            <span className="proof-photo-overlay">OPERACIÓN REAL<br /><strong>LISTOS PARA SALIR</strong></span>
+            <span className="proof-stamp">RZ / 2026</span>
+          </div>
           <div className="proof-copy">
             <p className="eyebrow"><span>04</span> Nuestra forma de trabajar</p>
             <h2>Simple para ti.<br /><em>Preciso para tu carga.</em></h2>
@@ -150,11 +161,11 @@ export default function Home() {
         <div className="shell">
           <div className="field-heading"><div><p className="eyebrow"><span>05</span> Flota / trabajo real</p><h2 id="field-title">Cada entrega<br /><em>empieza en terreno.</em></h2></div><p>Fotos reales de nuestra operación: carga preparada, vehículos en patio y rutas que conectan Chile de norte a sur.</p></div>
           <div className="field-gallery">
-            <figure className="field-card field-card-main"><Image src="/images/redza_fotos/optimized/redza-manipulacion-carga-traspaleta.webp" alt="Carga palletizada preparada dentro de un camión Redza" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 50vw" /><figcaption><span>OPERACIÓN / 01</span><strong>Carga asegurada antes de salir.</strong></figcaption></figure>
-            <figure className="field-card field-card-route"><Image src="/images/redza_fotos/optimized/redza-ruta-la-mano-del-desierto.webp" alt="Camión Redza en ruta junto a La Mano del Desierto, Antofagasta" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw" /><figcaption><span>RUTA / NORTE</span><strong>Una cobertura que cruza el desierto.</strong></figcaption></figure>
+            <figure className="field-card field-card-main"><Image src="/images/redza_fotos/optimized/redza-manipulacion-carga-traspaleta.webp" alt="Carga palletizada preparada dentro de un camión Redza" fill sizes="(max-width: 520px) calc(100vw - 30px), (max-width: 900px) min(340px, 50vw - 18px), 50vw" /><figcaption><span>OPERACIÓN / 01</span><strong>Carga asegurada antes de salir.</strong></figcaption></figure>
+            <figure className="field-card field-card-route"><Image src="/images/redza_fotos/optimized/redza-ruta-la-mano-del-desierto.webp" alt="Camión Redza en ruta junto a La Mano del Desierto, Antofagasta" fill sizes="(max-width: 520px) calc(100vw - 30px), (max-width: 900px) min(340px, 50vw - 18px), 25vw" /><figcaption><span>RUTA / NORTE</span><strong>Una cobertura que cruza el desierto.</strong></figcaption></figure>
             <div className="field-note"><span>RZ / 05</span><p>Una flota visible, cuidada y preparada para que tu operación avance.</p><a className="text-link" data-umami-event="whatsapp-quote" href={whatsappLink} target="_blank" rel="noreferrer">Coordinar una ruta <ArrowUpRight size={16} /></a></div>
-            <figure className="field-card field-card-yard"><Image src="/images/redza_fotos/optimized/redza-flota-vehiculos-distribucion.webp" alt="Vehículos de distribución Redza estacionados en patio operativo" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw" /><figcaption><span>FLOTA / 02</span><strong>Vehículos para cada recorrido.</strong></figcaption></figure>
-            <figure className="field-card field-card-patio"><Image src="/images/redza_fotos/optimized/redza-flota-camiones-patio.webp" alt="Camiones Redza preparados en un patio logístico" fill sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 25vw" /><figcaption><span>PATIO / 03</span><strong>Coordinación desde el origen.</strong></figcaption></figure>
+            <figure className="field-card field-card-yard"><Image src="/images/redza_fotos/optimized/redza-flota-vehiculos-distribucion.webp" alt="Vehículos de distribución Redza estacionados en patio operativo" fill sizes="(max-width: 520px) calc(100vw - 30px), (max-width: 900px) min(340px, 50vw - 18px), 25vw" /><figcaption><span>FLOTA / 02</span><strong>Vehículos para cada recorrido.</strong></figcaption></figure>
+            <figure className="field-card field-card-patio"><Image src="/images/redza_fotos/optimized/redza-flota-camiones-patio.webp" alt="Camiones Redza preparados en un patio logístico" fill sizes="(max-width: 520px) calc(100vw - 30px), (max-width: 900px) min(340px, 50vw - 18px), 25vw" /><figcaption><span>PATIO / 03</span><strong>Coordinación desde el origen.</strong></figcaption></figure>
             <aside className="field-operations-board" aria-label="Flujo operativo Redza">
               <div className="field-board-top"><span>RUTA ACTIVA / REDZA</span><span className="field-board-live"><i /> OPERACIÓN 24—7</span></div>
               <div className="field-board-content">
